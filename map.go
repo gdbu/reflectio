@@ -5,6 +5,10 @@ import "reflect"
 // MakeMap will initialize a new map
 func MakeMap(value interface{}, tagKey string) (m Map) {
 	rtype := reflect.TypeOf(value)
+	return makeMap(rtype, tagKey)
+}
+
+func makeMap(rtype reflect.Type, tagKey string) (m Map) {
 	if rtype.Kind() == reflect.Ptr {
 		rtype = rtype.Elem()
 	}
