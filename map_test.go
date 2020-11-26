@@ -1,7 +1,6 @@
 package reflectio
 
 import (
-	"fmt"
 	"reflect"
 	"strconv"
 	"testing"
@@ -59,8 +58,6 @@ func TestMap_SetValueAsString(t *testing.T) {
 	if test.String1 != "Hello world!" {
 		t.Fatalf("invalid value, expected \"%s\" and received \"%s\"", "Hello world!", test.String1)
 	}
-
-	fmt.Println(test)
 }
 
 func TestMap_SetValueAsString_int8(t *testing.T) {
@@ -83,8 +80,6 @@ func TestMap_SetValueAsString_int8(t *testing.T) {
 	if test.Int1 != 13 {
 		t.Fatalf("invalid value, expected %d and received %d", 13, test.Int1)
 	}
-
-	fmt.Println(test)
 }
 
 func BenchmarkMakeMap(b *testing.B) {
