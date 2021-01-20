@@ -182,6 +182,14 @@ type testStruct struct {
 	Bool4 bool `reflectio:"bool4"`
 }
 
+type testStruct2 struct {
+	Int1    int64   `reflectio:"int1"`
+	Uint1   uint64  `reflectio:"uint1"`
+	Float1  float64 `reflectio:"float1"`
+	String1 string  `reflectio:"string1"`
+	Bool1   bool    `reflectio:"bool1"`
+}
+
 func ExampleMap_SetValueAsString() {
 	// Test struct, in the real world - this should be declared globally
 	type testStruct struct {
