@@ -1,6 +1,7 @@
 package reflectio
 
 import (
+	"fmt"
 	"reflect"
 	"testing"
 )
@@ -20,4 +21,17 @@ func TestCache_Get(t *testing.T) {
 	if err := m.SetValueAsString(target, "int1", "13"); err != nil {
 		t.Fatal(err)
 	}
+}
+
+func TestCache_Get_multiple_types(t *testing.T) {
+	var (
+		test  testStruct
+		test2 testStruct2
+	)
+
+	c := NewCache()
+	m := c.Get(test, "reflectio")
+	fmt.Println(m)
+	m = c.Get(test2, "reflectio")
+	fmt.Println(m)
 }
