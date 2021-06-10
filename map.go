@@ -44,6 +44,9 @@ func (m Map) SetValueAsString(target reflect.Value, key, value string) (err erro
 	}
 
 	field := target.Field(entry.fieldIndex)
+	if setter, ok := field.Interface().(Setter); ok {
+		return setter.SetValueAsString(value)
+	}
 
 	return entry.setValueAsString(field, value)
 }
