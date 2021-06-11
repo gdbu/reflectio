@@ -48,5 +48,5 @@ func (m Map) SetValueAsString(target reflect.Value, key, value string) (err erro
 		return setter.SetValueAsString(value)
 	}
 
-	return entry.setValueAsString(field, value)
+	return entry.SetValueAsString(field, value)
 }

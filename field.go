@@ -19,7 +19,7 @@ type Field struct {
 	kind reflect.Kind
 }
 
-func (f *Field) setValueAsString(target reflect.Value, value string) (err error) {
+func (f *Field) SetValueAsString(target reflect.Value, value string) (err error) {
 	switch f.kind {
 	case reflect.String:
 		target.SetString(value)
