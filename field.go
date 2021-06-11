@@ -19,6 +19,14 @@ type Field struct {
 	kind reflect.Kind
 }
 
+func (f *Field) FieldIndex() int {
+	return f.fieldIndex
+}
+
+func (f *Field) Kind() reflect.Kind {
+	return f.kind
+}
+
 func (f *Field) SetValueAsString(target reflect.Value, value string) (err error) {
 	switch f.kind {
 	case reflect.String:
